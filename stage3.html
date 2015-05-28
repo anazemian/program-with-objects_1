@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="UTF-8">
+	<title>Stage 3!</title>
+	<link rel="stylesheet" href="amir-style.css">
+</head>
+<body>
+	<h1>Object Oriented Programming</h1>
+	<div class="lesson">
+		<h2>Stage 3: Object Oriented Programming</h2>
+		<div class="concept">
+			<div class="concept-title">
+				Classes
+			</div>
+			<div class="concept-description">
+				<p>
+					In object-oriented programming (OOP), a class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions, methods).
+				</p>
+				<p>
+					The best way to learn about classes is by drawing shapes. We can think of classes as blueprints to a building. It contains information about the building such as height, number of rooms, etc. To draw shapes, we use the class Turtle. The class Turtle contains certain information about the turtle: size, color, movement, and from this class we can use multiple instnaces of of the turtle.
+				</p>
+				<p>
+					In the example "amir=turtle.Turtle", the instance of the class Turtle, is amir and the class is Turtle, the one with the uppercase T. Inside python, there is the file Turtle, and inside that file is a class called Turtle. We use this class to draw shapes. When the class Turtle is called, inside of that class is a function known as init which is short for initialize, and this function initializes creates space and memory for the instnace (amir) for the class Turtle. The instnace in the example above is amir.
+				</p>
+				<p>
+					A class can contain both data and methods.
+				</p>	
+			</div>
+		</div>
+		<div class="concept">
+			<div class="concept-title">
+				Instances
+			</div>
+			<div class="concept-description">
+				<p>
+					If we think of a class as a blue print for a building, we can think of an instance as the actual building. We can have multiple instances of a class. For example, if we are to have a class Movie, Toy Story would be an instance of that class, as would, Avatar, or The Big Lebowski. When we create and instnace of a class, the classes constructor gets called.
+				</p>
+			</div>
+		</div>
+		<div class="concept">
+			<div class="concept-title">
+				Constructor
+			</div>
+			<div class="concept-description">
+				<p>
+					The constructor is esentially the init method inside the class. The constructor initializes all of the data associated with the instance. The constructor uses the keyword SELF. Self is like the instance in question, so in the movie example, SELF would refer to Toy Story.
+				</p>
+			</div>
+		</div>
+		<div class="concept">
+			<div class="concept-title">
+				Instance Variables
+			</div>
+			<div class="concept-description">
+				<p>
+					Instance variables are exactly as they sound; variables of the instnace. If we have the instnace, Toy Story, the instance variables would be the title, story line, the trailer, etc. These variables could be different with each instance. All of the variables associated with a specific instance are instance variables. These are unique to an object and can be accessed using the self keyword inside the class, and the instnace name outside of the class.
+				</p>
+			</div>
+			<div class="concept">
+				<div class="concept-title">
+					Instance Methods
+				</div>
+				<div class="concept-description">
+					<p>
+						All of the functions inside a class that are associated with the instance and have the first argument as self, are instnace methods. For example: def show_trailer(self): would be an instance method.
+					</p>
+				</div>
+			</div>
+			<div class="concept">
+				<div class="concept-title">
+					Class Variables
+				</div>
+				<div class="concept-description">
+					<p>
+						Class variables are variables that instances can share. For instance, movie ratings can be shared between the instances of movies. All movies share a valid rating of G, PG, PG-13, R. So we can add this variable to the Class Movies, and the instnaces like Toy Story, or Avatar share these variables. The following video does a great job of explaining class variables:<br>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/VebThG7xx8I" allowfullscreen></iframe>
+					</p>
+				</div>
+			</div>
+			<div class="concept">
+				<div class="concept-title">
+					Inheritance
+				</div>
+				<div class="concept-description">
+					<p>
+						A huge advantage of OOP is reusing code. Inheritance allows us to do so. Inheritance in regards to coding is much like it is in the English language. A child can inherit things from parents like eye color or last name, much like in OOP different instances can inherit from classes. For example:
+					</p>	
+					<span class="code">Class Parent():<br>
+    											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, last_name, eye_color):<br>
+        											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Parent Constructor Called")<br>
+        											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.last_name = last_name<br>
+        											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.eye_color = eye_color<br><br>
+
+    											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def show_info(self):<br>
+        											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Last Name - "+self.last_name)<br>
+        											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Eye Color - "+self.eye_color)<br><br>
+
+											class Child(Parent):<br>
+    											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, last_name, eye_color, number_of_toys):<br>
+        										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Child Constructor Called")<br>
+        										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent.__init__(self, last_name, eye_color)<br>
+        										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.number_of_toys = number_of_toys<br><br>
+
+    											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def show_info(self):<br>
+        								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Last Name - "+self.last_name)<br>
+        								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Eye Color - "+self.eye_color)<br>
+        								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Number of toys - "+str(self.number_of_toys))<br><br><br>
+        			</span>
+        			<p>
+        				In the above code the class Child is inheriting values from the class Parent such as last name and eye color. The inheritance is seen in the line of code <span class="code">Parent.__init__(self, last_name, eye_color)</span> Here we are initializing the parent class that has the data for last name and eye color.
+        			</p>
+        		</div>
+        	</div>
+        	<div class="concept">
+        		<div class="concept-title">
+        			Method Overriding
+        		</div>
+        		<div class="concept-description">
+        			<p>
+        				Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its superclasses or parent classes.
+        			</p>
+        		</div>
+        	</div>
+        	<div class="concept">
+        		<div class="concept-title">
+        			Why OOP is useful for larger projects
+        		</div>
+        		<div class="concept-description">
+        			<p>
+        				OOP is modular, meaning it allows separation of duties in object based program development. Objects can be extended to include new attributes and behaviors, as well as be reused within applications. Because of this, OOP provides improved software development productivity over traditional based programming.
+        			</p>
+        			<p>
+        				Furthermore, object oriented software is easier to maintain. Since you have a modular design, parts of the code can be updated as needed in case of issues without making huge changes to the overall program. It also allows for faster and more cost effecient programming. With a large library of objects and codes, programmers can code faster and more effciently, which allows for less cost and more rapid output.
+        			</p>
+        			<p>
+        				Finally, with OOP we can have higher quality software. With faster and more cost effecient development, more time and resources can be used to verify the software, thus outputing higher quality work.
+        			</p>
+        		</div>
+        	</div>
+        	<div class="concept">
+        		<div class="concept-title">
+        			What is the connection between OOP and other concepts like CSS and HTML?
+        		</div>
+        		<div class="concept-description">
+        			<p>
+        				While CSS and HTML are not object oriented languages, there is a link between OOP and these concepts. The same basic principal can be applied to CSS as to OOP. If we think of object oriented CSS, we can think of it like this:<br><br>
+
+        				Object oriented CSS is a coding style that allows nestable chunks of HTML via objects or modules like that in OOP, that define a section of a webpage, that then allows for reusable styling. <br><br>
+
+        				Ultimately this means that we would have a standard 'object', in this case an HTML structure. Then we have our CSS classes that we apply to said object which then define the look and feel.
+        			</p>
+        			<p>
+        				If we apply the concept of OOP to something like CSS, we can also use method overriding to CSS Cascading. If we have a cascade in CSS that applies to its subclasses, we can override that feature just as we could in OOP. While it is not the same in execution, the concept can be applied just the same. For example:<br><br><span class="code">
+
+        				// default.css</br>
+						.color {</br>
+   							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: blue !important;</br>
+						}<br><br>
+
+						// posts.css<br>
+						.color {<br>
+   							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>
+						}</span><br><br>
+						 In this example the color would be blue. Using !important on inherited style forces inherited style to be used, if you want to override the inherited style then you can simply add !important to post.css <span class="code"><br>
+
+						// default.css<br>
+						.color {<br>
+   							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: blue !important;<br>
+						}<br><br>
+
+						// posts.css<br>
+						.color {<br>
+ 						    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: green !important;<br>
+						}</span><br><br>
+ 						In this example the color would be green. Now both are viewed as important and the last one will be used. This is just an example of how a concept like method overriding can be used with CSS. 
+ 					</p>
+ 				</div>
+ 			</div>						
+        </div>
+    </div>
+</body> 
+</html>       									
+
+
+
+
+		
+
+
+
+							 											
+
